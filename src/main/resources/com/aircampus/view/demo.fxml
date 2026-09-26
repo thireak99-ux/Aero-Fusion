@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aircampus.ui.DemoController" spacing="12" styleClass="workspace,app-root">
+  <FlowPane hgap="8" vgap="8" styleClass="page-navigation"><Button fx:id="navDashboardButton" text="← Back to dashboard" onAction="#onDashboard" styleClass="primary-button"/><Button fx:id="navBoardButton" text="Flight board" onAction="#onFlightBoard"/><Button fx:id="navTrackingButton" text="Flight tracking" onAction="#onTracking"/><Button fx:id="navDemoButton" text="Demo controls" onAction="#onDemoNavigation"/></FlowPane>
+  <Label text="AeroFusion demo &amp; time controls" styleClass="page-title"/>
+  <Label text="Use this workspace to test the complete airport flow on any demonstration date." styleClass="muted" wrapText="true"/>
+  <Label fx:id="clockLabel" styleClass="summary" wrapText="true"/>
+  <FlowPane hgap="8" vgap="8"><Button text="Add fresh demo week" onAction="#onNewWeek" styleClass="primary-button"/><Button text="Pause current time" onAction="#onFreeze"/><Button text="Use computer time" onAction="#onRealTime"/></FlowPane>
+  <Label text="Select a flight and a test point. Recommended: 2 hours before departure, then test the roles in order." styleClass="muted" wrapText="true"/>
+  <FlowPane hgap="8" vgap="8"><ComboBox fx:id="flightBox" prefWidth="390"/><ComboBox fx:id="pointBox" prefWidth="360"/><Button text="Apply preset" onAction="#onPreset" styleClass="primary-button"/></FlowPane>
+  <FlowPane hgap="8" vgap="8"><Label text="Custom demo date/time:"/><DatePicker fx:id="datePicker" prefWidth="150"/><TextField fx:id="timeField" promptText="HH:mm" prefWidth="90"/><Button text="Set and pause" onAction="#onSetTime"/></FlowPane>
+  <Label text="Time controls affect all windows in this running app. Applying them closes counter sessions and revokes ATC clearances so they can be revalidated. Bookings and schedules remain unchanged. Restart returns to computer time." styleClass="muted" wrapText="true"/>
+  <TextArea fx:id="checklistArea" editable="false" wrapText="true" VBox.vgrow="ALWAYS" minHeight="180"/>
+  <Label fx:id="resultLabel" text="Select a future flight to start, or add a fresh demo week." styleClass="status-bar" wrapText="true"/>
+</VBox>

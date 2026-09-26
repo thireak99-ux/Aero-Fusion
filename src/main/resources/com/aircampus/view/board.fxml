@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aircampus.ui.BoardController" spacing="16" styleClass="workspace,app-root">
+  <FlowPane hgap="8" vgap="8" styleClass="page-navigation"><Button fx:id="navDashboardButton" text="← Back to dashboard" onAction="#onDashboard" styleClass="primary-button"/><Button fx:id="navBoardButton" text="Flight board" onAction="#onFlightBoard"/><Button fx:id="navTrackingButton" text="Flight tracking" onAction="#onTracking"/><Button fx:id="navDemoButton" text="Demo controls" onAction="#onDemoNavigation"/></FlowPane>
+  <Label text="Departure / arrival board" styleClass="page-title"/>
+  <Label text="All managed flights • green on time • orange delayed • red cancelled • blue boarding" styleClass="muted"/>
+  <FlowPane hgap="10" vgap="8"><ComboBox fx:id="rangeBox" prefWidth="240"/><DatePicker fx:id="boardDate" prefWidth="170"/><Button text="Apply view" onAction="#onRefresh"/></FlowPane>
+  <TableView fx:id="boardTable" VBox.vgrow="ALWAYS"/>
+  <Label fx:id="updatedLabel" styleClass="summary"/><Button text="Refresh board" onAction="#onRefresh"/>
+</VBox>

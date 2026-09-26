@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aircampus.ui.RegisterController" styleClass="app-root">
+  <center><ScrollPane fitToWidth="true"><VBox alignment="CENTER" spacing="12" styleClass="workspace">
+    <VBox spacing="10" maxWidth="500" styleClass="login-card">
+      <Label text="Create your passenger account" wrapText="true" styleClass="page-title"/>
+      <Label text="Staff roles use the supplied demo accounts." styleClass="muted"/>
+      <Label text="Full name"/><TextField fx:id="nameField" promptText="Your full name"/>
+      <Label text="Email"/><TextField fx:id="emailField" promptText="name@example.com"/>
+      <Label text="Username"/><TextField fx:id="usernameField" promptText="3–30 letters, digits or underscores"/>
+      <Label text="Phone"/><TextField fx:id="phoneField" promptText="+85512345678"/>
+      <Label text="Password"/><PasswordField fx:id="passwordField" promptText="8+ characters and at least one number"/>
+      <Label text="Confirm password"/><PasswordField fx:id="confirmField"/>
+      <Button text="Create account" onAction="#onRegister" styleClass="primary-button"/>
+      <Button text="Back to sign in" onAction="#onBack"/>
+    </VBox>
+  </VBox></ScrollPane></center>
+</BorderPane>

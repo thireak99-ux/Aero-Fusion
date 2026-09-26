@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aircampus.ui.BoardingPassController" styleClass="app-root">
+  <top><FlowPane hgap="8" vgap="8" styleClass="page-navigation"><Button fx:id="navDashboardButton" text="← Back to dashboard" onAction="#onDashboard" styleClass="primary-button"/><Button fx:id="navBoardButton" text="Flight board" onAction="#onFlightBoard"/><Button fx:id="navTrackingButton" text="Flight tracking" onAction="#onTracking"/><Button fx:id="navDemoButton" text="Demo controls" onAction="#onDemoNavigation"/></FlowPane></top>
+  <center><VBox spacing="16" alignment="CENTER" styleClass="workspace">
+    <VBox fx:id="passCard" maxWidth="760" prefWidth="760" spacing="16" styleClass="boarding-card">
+      <HBox spacing="20"><Label text="AeroFusion" styleClass="brand-dark"/><Region HBox.hgrow="ALWAYS"/><Label text="BOARDING PASS / DEMO" styleClass="section-kicker"/></HBox>
+      <Label fx:id="validityLabel" text="Preparing boarding pass..." wrapText="true" styleClass="summary"/>
+      <Label fx:id="routeLabel" styleClass="route-title"/>
+      <Label text="PASSENGER" styleClass="section-kicker"/><Label fx:id="nameLabel" styleClass="page-title"/>
+      <Separator/>
+      <HBox spacing="28" alignment="CENTER_LEFT">
+        <VBox spacing="10" HBox.hgrow="ALWAYS">
+          <Label text="FLIGHT" styleClass="section-kicker"/><Label fx:id="flightLabel" styleClass="pass-value"/>
+          <Label text="SEAT / CLASS" styleClass="section-kicker"/><Label fx:id="seatLabel" styleClass="pass-value"/>
+          <Label text="GATE" styleClass="section-kicker"/><Label fx:id="gateLabel" styleClass="pass-value"/>
+          <Label fx:id="timeLabel" wrapText="true" styleClass="muted"/>
+        </VBox>
+        <VBox spacing="8" alignment="CENTER"><ImageView fx:id="qrImage" fitWidth="220" fitHeight="220" preserveRatio="true"/><Label fx:id="referenceLabel" styleClass="pass-value"/></VBox>
+      </HBox>
+      <Separator/>
+      <Label text="Training boarding pass. All times are Cambodia time (UTC+7). An exported image is a snapshot; revalidate its booking reference in the app at the gate." wrapText="true" styleClass="muted"/>
+    </VBox>
+    <HBox spacing="12" alignment="CENTER"><Button text="Download PNG" onAction="#onExport" styleClass="primary-button"/><Button text="Print / simulate" onAction="#onPrint"/></HBox>
+  </VBox></center>
+</BorderPane>

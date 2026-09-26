@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.geometry.Insets?>
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aircampus.ui.MapController" spacing="12" styleClass="workspace,app-root">
+  <FlowPane hgap="8" vgap="8" styleClass="page-navigation"><Button fx:id="navDashboardButton" text="← Back to dashboard" onAction="#onDashboard" styleClass="primary-button"/><Button fx:id="navBoardButton" text="Flight board" onAction="#onFlightBoard"/><Button fx:id="navTrackingButton" text="Flight tracking" onAction="#onTracking"/><Button fx:id="navDemoButton" text="Demo controls" onAction="#onDemoNavigation"/></FlowPane>
+  <Label text="Flight tracking" styleClass="page-title"/>
+  <Label text="Regional coordinate map • Southeast Asia • dotted line is the planned route, not a flown track" wrapText="true" styleClass="muted"/>
+  <FlowPane hgap="8" vgap="8"><CheckBox fx:id="liveCheck" text="Use OpenSky live data" onAction="#onMode"/><Button text="Refresh" onAction="#onRefresh"/><ComboBox fx:id="flightBox" prefWidth="400"/><Button text="Track selected flight" onAction="#onTrack"/><Button text="All aircraft" onAction="#onAll"/></FlowPane>
+  <Label fx:id="sourceLabel" text="Loading tracking data..." styleClass="summary"/>
+  <StackPane fx:id="mapPane" VBox.vgrow="ALWAYS" minHeight="240" prefHeight="360"><Canvas fx:id="mapCanvas" width="900" height="360"/></StackPane>
+  <Label fx:id="matchLabel" wrapText="true" styleClass="muted"/>
+  <TableView fx:id="positionsTable" prefHeight="160" minHeight="130"/>
+  <Label text="Blue: OpenSky positions. Amber: simulated. Live requests are shared and limited to once every 2 minutes; failed requests use a labelled demo fallback." wrapText="true" styleClass="muted"/>
+</VBox>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aircampus.ui.MaintenanceController" styleClass="app-root">
+    <left><VBox prefWidth="206" minWidth="206" spacing="12" styleClass="sidebar">
+      <Label text="AF" styleClass="brand-icon"/><Label text="AeroFusion" styleClass="brand"/>
+      <Label text="AIRPORT MANAGEMENT" styleClass="sidebar-kicker"/><Separator/>
+      <Label fx:id="userLabel" wrapText="true" styleClass="sidebar-user"/>
+      <Button text="Refresh workspace" onAction="#onRefresh" styleClass="nav-button"/>
+      <Button text="Flight board" onAction="#onBoard" styleClass="nav-button"/>
+      <Button text="Flight tracking" onAction="#onMap" styleClass="nav-button"/>
+      <Button text="Notifications" onAction="#onNotifications" styleClass="nav-button"/>
+      <Region VBox.vgrow="ALWAYS"/>
+      <Label text="CLASSROOM DEMO" styleClass="sidebar-kicker"/>
+      <Label text="Open another login to demonstrate roles together." wrapText="true" styleClass="sidebar-note"/>
+      <Button text="Open another login" onAction="#onOtherLogin" styleClass="nav-button"/>
+      <Button text="Sign out" onAction="#onLogout" styleClass="nav-button"/>
+    </VBox></left>
+    <center><VBox spacing="14" styleClass="workspace">
+      <Label text="Aircraft maintenance" styleClass="page-title"/>
+      <Label text="Log inspections and control the aircraft clearance needed for boarding." styleClass="muted" wrapText="true"/><Label fx:id="summaryLabel" styleClass="summary"/>
+      <TabPane tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS"><Tab text="Fleet condition"><VBox spacing="12" styleClass="tab-content"><TableView fx:id="aircraftTable" VBox.vgrow="ALWAYS" minHeight="160"/><FlowPane hgap="8" vgap="8"><Button text="Inspect / clear / ground aircraft" onAction="#onInspect" styleClass="primary-button"/><Button text="Report defect incident" onAction="#onIncident" styleClass="button"/></FlowPane><Label text="All demo aircraft start grounded. Clear an aircraft after the inspection checklist to enable pre-flight sign-off." styleClass="muted" wrapText="true"/></VBox></Tab><Tab text="Inspection history"><VBox spacing="12" styleClass="tab-content"><ListView fx:id="historyList" VBox.vgrow="ALWAYS"/></VBox></Tab></TabPane>
+      <Label fx:id="statusLabel" text="Ready. Select a record, then choose an action." wrapText="true" styleClass="status-bar"/>
+    </VBox></center>
+    </BorderPane>

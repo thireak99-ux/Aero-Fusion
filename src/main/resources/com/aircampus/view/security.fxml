@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aircampus.ui.SecurityController" styleClass="app-root">
+    <left><VBox prefWidth="206" minWidth="206" spacing="12" styleClass="sidebar">
+      <Label text="AF" styleClass="brand-icon"/><Label text="AeroFusion" styleClass="brand"/>
+      <Label text="AIRPORT MANAGEMENT" styleClass="sidebar-kicker"/><Separator/>
+      <Label fx:id="userLabel" wrapText="true" styleClass="sidebar-user"/>
+      <Button text="Refresh workspace" onAction="#onRefresh" styleClass="nav-button"/>
+      <Button text="Flight board" onAction="#onBoard" styleClass="nav-button"/>
+      <Button text="Flight tracking" onAction="#onMap" styleClass="nav-button"/>
+      <Button text="Notifications" onAction="#onNotifications" styleClass="nav-button"/>
+      <Region VBox.vgrow="ALWAYS"/>
+      <Label text="CLASSROOM DEMO" styleClass="sidebar-kicker"/>
+      <Label text="Open another login to demonstrate roles together." wrapText="true" styleClass="sidebar-note"/>
+      <Button text="Open another login" onAction="#onOtherLogin" styleClass="nav-button"/>
+      <Button text="Sign out" onAction="#onLogout" styleClass="nav-button"/>
+    </VBox></left>
+    <center><VBox spacing="14" styleClass="workspace">
+      <Label text="Passenger security" styleClass="page-title"/>
+      <Label text="Screen passengers and baggage, then validate the boarding pass against photo ID." styleClass="muted" wrapText="true"/><Label fx:id="summaryLabel" styleClass="summary"/>
+      <TabPane tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS"><Tab text="Screening queue"><VBox spacing="12" styleClass="tab-content"><TableView fx:id="securityTable" VBox.vgrow="ALWAYS" minHeight="160"/><FlowPane hgap="8" vgap="8"><Button text="Screen passenger" onAction="#onPassenger" styleClass="primary-button"/><Button text="Screen baggage" onAction="#onBaggage" styleClass="button"/><Button text="Validate ID / grant gate access" onAction="#onClear" styleClass="button"/><Button text="View watchlist" onAction="#onWatchlist" styleClass="button"/><Button text="Log / escalate incident" onAction="#onIncident" styleClass="button"/></FlowPane><Label text="Both screenings must pass. Watchlist matches and cancelled bookings are denied gate access." styleClass="muted" wrapText="true"/></VBox></Tab></TabPane>
+      <Label fx:id="statusLabel" text="Ready. Select a record, then choose an action." wrapText="true" styleClass="status-bar"/>
+    </VBox></center>
+    </BorderPane>

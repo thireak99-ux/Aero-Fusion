@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aircampus.ui.LoginController" styleClass="app-root">
+  <left><VBox prefWidth="420" spacing="24" styleClass="login-story">
+    <Label text="AF" styleClass="brand-icon"/><Label text="AeroFusion" styleClass="hero-brand"/>
+    <Region prefHeight="32"/>
+    <Label text="One airport.
+Every journey connected." wrapText="true" styleClass="hero-title"/>
+    <Label text="A role-based airport workspace, from a passenger's first booking to the final runway clearance." wrapText="true" styleClass="hero-copy"/>
+    <Region VBox.vgrow="ALWAYS"/>
+  </VBox></left>
+  <center><VBox alignment="CENTER" spacing="18" styleClass="login-area">
+    <VBox spacing="14" maxWidth="450" styleClass="login-card">
+      <Label text="Welcome aboard" styleClass="page-title"/><Label text="Sign in to your airport workspace." styleClass="muted"/>
+      <Label text="Your role" styleClass="field-label"/><ComboBox fx:id="roleBox" maxWidth="Infinity"/>
+      <Label text="Email or username" styleClass="field-label"/><TextField fx:id="loginField" promptText="Enter email or username" onAction="#onLogin"/>
+      <Label text="Password" styleClass="field-label"/><PasswordField fx:id="passwordField" promptText="Enter password" onAction="#onLogin"/>
+      <Button text="Sign in" onAction="#onLogin" defaultButton="true" maxWidth="Infinity" styleClass="primary-button"/>
+      <Button text="Create a passenger account" onAction="#onRegister" maxWidth="Infinity"/>
+      <Separator/>
+      <Label text="TRY THE DEMO" styleClass="section-kicker"/>
+      <Label text="Choose any role above, fill its demo account, then sign in." wrapText="true" styleClass="muted"/>
+      <Button text="Fill demo account" onAction="#onDemo" maxWidth="Infinity"/>
+    </VBox>
+  </VBox></center>
+</BorderPane>

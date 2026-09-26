@@ -1,0 +1,7 @@
+target/
+data/
+exports/
+.idea/
+*.iml
+*.log
+.env
